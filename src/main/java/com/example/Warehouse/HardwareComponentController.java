@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @RestController
 public class HardwareComponentController {
     @GetMapping("/components")
-    public HardwareComponent[] getComponents(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public HardwareComponent[] getComponents() {
         HardwareComponent[] components = {new HardwareComponent("monitor", "desc monitior", new BigDecimal(200))};
         return components;
     }
