@@ -8,7 +8,7 @@ public class Hardware {
     private final String description;
     private final BigDecimal price;
 
-    public Hardware(long id, String name, String description, BigDecimal price) {
+    public Hardware(Long id, String name, String description, BigDecimal price) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -20,6 +20,8 @@ public class Hardware {
         this.description = description;
         this.price = price;
     }
+
+    public long getId() { return id; }
 
     public String getName() {
         return name;

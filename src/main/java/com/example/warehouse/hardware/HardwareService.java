@@ -9,7 +9,7 @@ import java.util.List;
 public class HardwareService {
     public List<Hardware> getHardwares() {
         return List.of(
-                new Hardware(1L, "monitor", "description for monitor", new BigDecimal(300)),
+                new Hardware(1L, "monitor", "description for monitor", new BigDecimal(250)),
                 new Hardware(2L, "mouse", "description for mouse", new BigDecimal(60))
         );
     }
