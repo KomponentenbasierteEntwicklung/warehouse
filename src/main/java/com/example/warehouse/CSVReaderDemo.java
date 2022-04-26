@@ -1,4 +1,4 @@
-package com.example.Warehouse;
+package com.example.warehouse;
 import java.io.FileReader;
 import com.opencsv.CSVReader;
 public class CSVReaderDemo {

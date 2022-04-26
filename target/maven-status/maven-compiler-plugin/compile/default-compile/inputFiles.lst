@@ -1,3 +1,5 @@
-/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/Warehouse/HardwareComponent.java
-/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/Warehouse/HardwareComponentController.java
-/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/Warehouse/WarehouseApplication.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/hardware/Hardware.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/hardware/HardwareService.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/WarehouseApplication.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/CSVReaderDemo.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/hardware/HardwareController.java
