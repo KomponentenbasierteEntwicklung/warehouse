@@ -8,6 +8,6 @@ Only run:
 ```mvn spring-boot:run```
 
 # Postgres useful commands
-\c [DB name]: connect to Database 
-\d: list of relations
-\du: list of users
+```\c [DB name]```: connect to Database   
+```\d```: list of relations   
+```\du```: list of users   
