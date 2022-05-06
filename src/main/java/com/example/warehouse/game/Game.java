@@ -1,10 +1,19 @@
 package com.example.warehouse.game;
 
+import javax.persistence.*;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Date;
 
+// @Entity used for hibernate
+// @Table for table in database
+
+@Entity
 public class Game {
+    // map Game Class to database table
+    @Id
+    @SequenceGenerator(name = "game_sequence", sequenceName = "game_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    generator = "game_sequence")
     private Long id;
     private String name;
     private String publisher;

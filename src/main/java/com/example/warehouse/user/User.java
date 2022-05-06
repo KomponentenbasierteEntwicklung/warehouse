@@ -1,7 +1,7 @@
-package com.example.warehouse.hardware;
+package com.example.warehouse.user;
 
 public class User {
-    private long id;
+    private Long id;
     private String userName;
     private String email;
 
