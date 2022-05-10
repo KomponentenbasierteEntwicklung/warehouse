@@ -11,3 +11,8 @@ Only run:
 ```\c [DB name]```: connect to Database   
 ```\d```: list of relations   
 ```\du```: list of users   
+
+# Postgres heroku CLI
+link: https://devcenter.heroku.com/articles/managing-heroku-postgres-using-cli
+
+
