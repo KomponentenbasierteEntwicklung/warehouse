@@ -27,10 +27,10 @@ public class GameService {
     }
 
     public void addNewGame(Game game) {
-        Optional<Game> optionalGame = gameRepository.findGameByName(game.getName());
-        if(optionalGame.isPresent()){
-            throw new IllegalStateException("data with this game name already exists.");
-        }
+//        Optional<Game> optionalGame = gameRepository.findGameByName(game.getName());
+//        if(optionalGame.isPresent()){
+//            throw new IllegalStateException("data with this game name already exists.");
+//        }
         gameRepository.save(game);
     }
 

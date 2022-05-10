@@ -16,6 +16,7 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
     generator = "game_sequence")
     private Long id;
+    @Column(unique = true)
     @NotBlank(message = "Name is mandatory")
     private String name;
 
