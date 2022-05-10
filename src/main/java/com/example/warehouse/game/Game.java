@@ -1,6 +1,7 @@
 package com.example.warehouse.game;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.net.URL;
 import java.time.LocalDate;
 
@@ -15,7 +16,9 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
     generator = "game_sequence")
     private Long id;
+    @NotBlank(message = "Name is mandatory")
     private String name;
+
     private String publisher;
     private String genres;
     private int requiredAge;

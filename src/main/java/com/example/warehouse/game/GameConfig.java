@@ -16,17 +16,17 @@ public class GameConfig {
     public GameConfig() throws MalformedURLException {
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(GameRepository repository){
-        return args -> {
-            Game cs = new Game("Counter Strike", "publisher 1", "genre1; genre2", 0,
-                    LocalDate.of(2001, 10, 20), "about game", "min req",
-                    url, url);
-            Game dota = new Game( "Dota 2", "publisher 1", "genre1; genre2", 0,
-                    LocalDate.of(2001, 10, 20), "about game", "min req",
-                    url, url);
-
-            repository.saveAll(List.of(cs, dota));
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(GameRepository repository){
+//        return args -> {
+//            Game cs = new Game("Counter Strike", "publisher 1", "genre1; genre2", 0,
+//                    LocalDate.of(2001, 10, 20), "about game", "min req",
+//                    url, url);
+//            Game dota = new Game( "Dota 2", "publisher 1", "genre1; genre2", 0,
+//                    LocalDate.of(2001, 10, 20), "about game", "min req",
+//                    url, url);
+//
+//            repository.saveAll(List.of(cs, dota));
+//        };
+//    }
 }

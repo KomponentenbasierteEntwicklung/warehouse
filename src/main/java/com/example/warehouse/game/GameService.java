@@ -45,7 +45,7 @@ public class GameService {
     @Transactional
     public void updateGame(Long gameId, String name, String publisher, String genres, int requiredAge) {
         Game game = gameRepository.findById(gameId)
-                .orElseThrow(() -> new IllegalStateException("game with id " + gameId + "does not exist"));
+                .orElseThrow(() -> new IllegalStateException("game with id " + gameId + " does not exist"));
 
         if(name != null && name.length() > 0 && !Objects.equals(game.getName(), name)){
             Optional<Game> optionalGame = gameRepository.findGameByName(name);
@@ -66,5 +66,11 @@ public class GameService {
         if(requiredAge > -1 && game.getRequiredAge() != requiredAge){
             game.setRequiredAge(requiredAge);
         }
+    }
+
+    public Game getGame(Long gameId) {
+        Game game = gameRepository.findById(gameId)
+                .orElseThrow(() -> new IllegalStateException("game with id " + gameId + " does not exist"));
+        return game;
     }
 }
