@@ -11,4 +11,7 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 
     @Query("SELECT g FROM Game g WHERE g.name = ?1 ")
     Optional<Game> findGameByName(String name);
+
+    Boolean existsByName(String name);
+
 }
