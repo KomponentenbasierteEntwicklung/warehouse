@@ -16,3 +16,9 @@ Only run:
 link: https://devcenter.heroku.com/articles/managing-heroku-postgres-using-cli
 
 
+# Docker commands
+To build image:
+```docker build -t karelkt/kbe-backend-docker .```
+
+To run docker in production mode:
+```docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t karelkt/kbe-backend-docker ```
