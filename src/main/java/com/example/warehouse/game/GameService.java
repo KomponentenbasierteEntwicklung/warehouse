@@ -1,12 +1,13 @@
 package com.example.warehouse.game;
 
+import com.example.warehouse.helper.CSVHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -27,11 +28,16 @@ public class GameService {
     }
 
     public void addNewGame(Game game) {
-//        Optional<Game> optionalGame = gameRepository.findGameByName(game.getName());
-//        if(optionalGame.isPresent()){
-//            throw new IllegalStateException("data with this game name already exists.");
-//        }
         gameRepository.save(game);
+    }
+
+    public void importGamesFromCSV(MultipartFile file) {
+        try {
+            List<Game> tutorials = CSVHelper.csvToGames(file.getInputStream());
+            gameRepository.saveAll(tutorials);
+        } catch (IOException e) {
+            throw new RuntimeException("fail to store csv data: " + e.getMessage());
+        }
     }
 
     public void deleteGame(Long gameId) {

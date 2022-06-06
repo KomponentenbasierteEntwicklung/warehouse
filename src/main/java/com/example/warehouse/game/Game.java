@@ -19,20 +19,19 @@ public class Game {
     @Column(unique = true)
     @NotBlank(message = "Name is mandatory")
     private String name;
-
     private String publisher;
-    private String genres;
+    private String genres;  // seperated by ; for multiple
     private int requiredAge;
     private LocalDate releaseDate;
     private String aboutTheGame;
     private String minimumRequirement;
-    private URL url;
+    private URL imageUrl;
     private URL backgroundImage;
 
     public Game() {
     }
 
-    public Game(Long id, String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL url, URL backgroundImage) {
+    public Game(Long id, String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL imageUrl, URL backgroundImage) {
         this.id = id;
         this.name = name;
         this.publisher = publisher;
@@ -41,11 +40,11 @@ public class Game {
         this.releaseDate = releaseDate;
         this.aboutTheGame = aboutTheGame;
         this.minimumRequirement = minimumRequirement;
-        this.url = url;
+        this.imageUrl = imageUrl;
         this.backgroundImage = backgroundImage;
     }
 
-    public Game(String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL url, URL backgroundImage) {
+    public Game(String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL imageUrl, URL backgroundImage) {
         this.name = name;
         this.publisher = publisher;
         this.genres = genres;
@@ -53,7 +52,7 @@ public class Game {
         this.releaseDate = releaseDate;
         this.aboutTheGame = aboutTheGame;
         this.minimumRequirement = minimumRequirement;
-        this.url = url;
+        this.imageUrl = imageUrl;
         this.backgroundImage = backgroundImage;
     }
 
@@ -121,12 +120,12 @@ public class Game {
         this.minimumRequirement = minimumRequirement;
     }
 
-    public URL getUrl() {
-        return url;
+    public URL getImageUrl() {
+        return imageUrl;
     }
 
-    public void setUrl(URL url) {
-        this.url = url;
+    public void setImageUrl(URL imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public URL getBackgroundImage() {
@@ -148,7 +147,7 @@ public class Game {
                 ", releaseDate=" + releaseDate +
                 ", aboutTheGame='" + aboutTheGame + '\'' +
                 ", minimumRequirement='" + minimumRequirement + '\'' +
-                ", url=" + url +
+                ", url=" + imageUrl +
                 ", backgroundImage=" + backgroundImage +
                 '}';
     }
