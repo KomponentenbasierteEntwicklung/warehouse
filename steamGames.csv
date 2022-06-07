@@ -1,0 +1,3 @@
+appid, name, publisher, genres, required_age, release_date,unusedHeader2, about_the_game, minimum, header_image, background, unusedHeader1
+1,game#1,publisher#1,genre#1,1,2000-11-01,unused#1,aboutGame#1,min#1,https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1528733245, https://steamcdn-a.akamaihd.net/steam/apps/30/page_bg_generated_v6b.jpg?t=1512413490,unused
+2,game#2,publisher#2,genre#2,2,2000-11-02,unused#2,aboutGame#2,min#2,https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1528733245, https://steamcdn-a.akamaihd.net/steam/apps/30/page_bg_generated_v6b.jpg?t=1512413491,unused
