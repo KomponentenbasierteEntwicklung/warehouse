@@ -26,3 +26,10 @@ To build image:
 
 To run docker in production mode:
 ```docker run -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t karelkt/kbe-backend-docker ```
+
+To run the updated Spring Boot application, we need to rebuild it first. Therefore, we execute these commands once more in the project root directory:
+
+./mvnw clean package -DskipTests
+cp target/Warehouse-0.0.1-SNAPSHOT.jar src/main/docker
+cd src/main/docker
+docker-compose up
