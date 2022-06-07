@@ -7,6 +7,10 @@ or
 Only run:
 ```mvn spring-boot:run```
 
+# Swagger UI
+To see all the available API calls, the warehouse uses swagger UI as its third party and its set to this route:
+```/swagger-ui/index.html#/```
+
 # Postgres useful commands
 ```\c [DB name]```: connect to Database   
 ```\d```: list of relations   
