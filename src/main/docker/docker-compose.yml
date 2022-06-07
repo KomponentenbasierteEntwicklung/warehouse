@@ -1,0 +1,64 @@
+#services:
+#  backend:
+#    container_name: app-backend
+#    image: 'docker-spring-boot-postgres:latest'
+#    build:
+#      context: .
+#    depends_on:
+#      - db
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
+#      - SPRING_DATASOURCE_USERNAME=compose-postgres
+#      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#      - POSTGRES_DB=example
+#
+#    ports:
+#      - 8080:8080
+#    networks:
+#      - spring-postgres
+#  db:
+#    container_name: postgres-db
+#    image: postgres
+#    restart: always
+#    secrets:
+#      - db-password
+#    volumes:
+#      - db-data:/var/lib/postgresql/data
+#    networks:
+#      - spring-postgres
+#    environment:
+#      - POSTGRES_DB=example
+#      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+#    expose:
+#      - 5432
+#volumes:
+#  db-data:
+#secrets:
+#  db-password:
+#    file: db/password.txt
+#networks:
+#  spring-postgres:
+
+services:
+  backend:
+    container_name: app-backend
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/game
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - 8080:8080
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
