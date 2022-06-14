@@ -43,7 +43,6 @@
 services:
   backend:
     container_name: app-backend
-    image: 'docker-spring-boot-postgres:latest'
     build:
       context: .
     depends_on:
