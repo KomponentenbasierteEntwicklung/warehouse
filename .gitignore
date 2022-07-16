@@ -105,3 +105,11 @@ target
 
 # DS_Store
 .DS_Store
+
+# local docker database
+dockerDB
+
+# non essential files
+target
+.idea
+.DS_Store
