@@ -108,8 +108,3 @@ target
 
 # local docker database
 dockerDB
-
-# non essential files
-target
-.idea
-.DS_Store
