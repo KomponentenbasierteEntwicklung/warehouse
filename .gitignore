@@ -100,7 +100,12 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-# non essential files
+# Remove target folder
 target
-.idea
+
+# DS_Store
 .DS_Store
+
+# local docker database
+dockerDB
+
