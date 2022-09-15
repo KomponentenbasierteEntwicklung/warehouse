@@ -23,6 +23,7 @@ public class Game {
     private String genres;  // seperated by ; for multiple
     private int requiredAge;
     private LocalDate releaseDate;
+    @Column(length = 1500)
     private String aboutTheGame;
     private String minimumRequirement;
     private URL imageUrl;
