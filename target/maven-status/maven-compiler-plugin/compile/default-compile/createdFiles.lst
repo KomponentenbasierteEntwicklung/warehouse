@@ -1,10 +1,8 @@
 com/example/warehouse/game/GameController.class
 com/example/warehouse/WarehouseApplication.class
-com/example/warehouse/game/GameConfig.class
 com/example/warehouse/helper/CSVHelper.class
 com/example/warehouse/game/GameRepository.class
 com/example/warehouse/message/ResponseMessage.class
 com/example/warehouse/game/GameService.class
 com/example/warehouse/game/Game.class
-com/example/warehouse/CSVReaderDemo.class
 com/example/warehouse/user/User.class

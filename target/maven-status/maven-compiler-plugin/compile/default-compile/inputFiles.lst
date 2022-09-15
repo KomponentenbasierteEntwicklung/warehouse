@@ -1,10 +1,8 @@
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/user/User.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameController.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/WarehouseApplication.java
-/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameConfig.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/Game.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameService.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/helper/CSVHelper.java
-/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/CSVReaderDemo.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/message/ResponseMessage.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameRepository.java
