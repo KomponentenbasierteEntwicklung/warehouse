@@ -1,5 +1,7 @@
-package com.example.warehouse.game;
+package com.example.warehouse.dlc;
 
+import com.example.warehouse.game.Game;
+import com.example.warehouse.game.GameService;
 import com.example.warehouse.helper.CSVHelper;
 import com.example.warehouse.message.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,34 +13,36 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(path = "/api/v1/games")
-public class GameController {
-    private final GameService gameService;
+@RequestMapping(path = "/api/v1/dlcs")
+public class DlcController {
+
+    private final DlcService dlcService;
 
     @Autowired
-    public GameController(GameService gameService) {
-        this.gameService = gameService;
+    public DlcController(DlcService dlcService) {
+        this.dlcService = dlcService;
     }
 
     @GetMapping
-    public List<Game> getGames() throws MalformedURLException {
-        return gameService.getGames();
+    public List<Dlc> getDlcs() throws MalformedURLException {
+        return dlcService.getDlcs();
     }
 
-    @GetMapping(path = "{gameId}")
-    public Game getGame(@PathVariable("gameId") Long gameId) {
-        return gameService.getGame(gameId);
+    @GetMapping(path = "{dlcId}")
+    public Dlc getDlc(@PathVariable("dlcId") Long dlcId) {
+        return dlcService.getDlc(dlcId);
     }
 
     @PostMapping
-    public void registerNewGame(@Valid @RequestBody Game game){
-        gameService.addNewGame(game);
+    public void registerNewDlc(@Valid @RequestBody Dlc dlc){
+        dlcService.addNewDlc(dlc);
     }
 
     @PostMapping("/import")
@@ -46,7 +50,7 @@ public class GameController {
         String message = "";
         if (CSVHelper.hasCSVFormat(file)) {
             try {
-                gameService.importGamesFromCSV(file);
+                dlcService.importDlcsFromCSV(file);
                 message = "Uploaded the file successfully: " + file.getOriginalFilename();
                 return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
             } catch (Exception e) {
@@ -59,16 +63,16 @@ public class GameController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
     }
 
-    @DeleteMapping(path = "{gameId}")
-    public void deleteGame(@PathVariable("gameId") Long gameId){
-        gameService.deleteGame(gameId);
+    @DeleteMapping(path = "{dlcId}")
+    public void deleteDlc(@PathVariable("dlcId") Long dlcId){
+        dlcService.deleteDlc(dlcId);
     }
 
-    @PutMapping(path = "{gameId}")
-    public void updateGame(@PathVariable("gameId") Long gameId, @RequestParam(required = false) String name,
-                           @RequestParam(required = false) String publisher, @RequestParam(required = false) String genres,
-                           @RequestParam(required = false) int requiredAge){
-        gameService.updateGame(gameId, name, publisher, genres, requiredAge);
+    @PutMapping(path = "{dlcId}")
+    public void updateDlc(@PathVariable("dlcId") Long dlcId, @RequestParam(required = false) String name,
+                           @RequestParam(required = false) String originalGame, @RequestParam(required = false) String description,
+                           @RequestParam(required = false) BigDecimal price){
+        dlcService.updateDlc(dlcId, name, originalGame, description, price);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
