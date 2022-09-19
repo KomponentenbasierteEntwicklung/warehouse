@@ -45,8 +45,9 @@ public class CSVHelper {
                         csvRecord.get("about_the_game"),
                         csvRecord.get("minimum"),
                         new URL(csvRecord.get("header_image")),
-                        new URL(csvRecord.get("backgroundURL"))
-                );
+                        new URL(csvRecord.get("backgroundURL")),
+                        BigDecimal.valueOf(Double.parseDouble(csvRecord.get("Price")))
+                        );
                 games.add(game);
             }
             return games;
