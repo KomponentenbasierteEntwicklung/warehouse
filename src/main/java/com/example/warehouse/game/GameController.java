@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.List;
@@ -67,8 +68,8 @@ public class GameController {
     @PutMapping(path = "{gameId}")
     public void updateGame(@PathVariable("gameId") Long gameId, @RequestParam(required = false) String name,
                            @RequestParam(required = false) String publisher, @RequestParam(required = false) String genres,
-                           @RequestParam(required = false) int requiredAge){
-        gameService.updateGame(gameId, name, publisher, genres, requiredAge);
+                           @RequestParam(required = false) int requiredAge, @RequestParam(required = false) BigDecimal price){
+        gameService.updateGame(gameId, name, publisher, genres, requiredAge, price);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

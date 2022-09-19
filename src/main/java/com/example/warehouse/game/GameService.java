@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Objects;
@@ -49,7 +50,7 @@ public class GameService {
     }
 
     @Transactional
-    public void updateGame(Long gameId, String name, String publisher, String genres, int requiredAge) {
+    public void updateGame(Long gameId, String name, String publisher, String genres, int requiredAge, BigDecimal price) {
         Game game = gameRepository.findById(gameId)
                 .orElseThrow(() -> new IllegalStateException("game with id " + gameId + " does not exist"));
 
@@ -71,6 +72,10 @@ public class GameService {
 
         if(requiredAge > -1 && game.getRequiredAge() != requiredAge){
             game.setRequiredAge(requiredAge);
+        }
+
+        if(price != null && price.compareTo(BigDecimal.ZERO) > 0){
+            game.setPrice(price);
         }
     }
 

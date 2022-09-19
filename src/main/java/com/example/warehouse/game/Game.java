@@ -2,6 +2,7 @@ package com.example.warehouse.game;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDate;
 
@@ -27,11 +28,13 @@ public class Game {
     private String minimumRequirement;
     private URL imageUrl;
     private URL backgroundImage;
+    private BigDecimal price;
+
 
     public Game() {
     }
 
-    public Game(Long id, String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL imageUrl, URL backgroundImage) {
+    public Game(Long id, String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL imageUrl, URL backgroundImage, BigDecimal price) {
         this.id = id;
         this.name = name;
         this.publisher = publisher;
@@ -42,9 +45,10 @@ public class Game {
         this.minimumRequirement = minimumRequirement;
         this.imageUrl = imageUrl;
         this.backgroundImage = backgroundImage;
+        this.price = price;
     }
 
-    public Game(String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL imageUrl, URL backgroundImage) {
+    public Game(String name, String publisher, String genres, int requiredAge, LocalDate releaseDate, String aboutTheGame, String minimumRequirement, URL imageUrl, URL backgroundImage, BigDecimal price) {
         this.name = name;
         this.publisher = publisher;
         this.genres = genres;
@@ -54,6 +58,7 @@ public class Game {
         this.minimumRequirement = minimumRequirement;
         this.imageUrl = imageUrl;
         this.backgroundImage = backgroundImage;
+        this.price = price;
     }
 
     public Long getId() {
@@ -136,6 +141,14 @@ public class Game {
         this.backgroundImage = backgroundImage;
     }
 
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Game{" +
@@ -149,6 +162,7 @@ public class Game {
                 ", minimumRequirement='" + minimumRequirement + '\'' +
                 ", url=" + imageUrl +
                 ", backgroundImage=" + backgroundImage +
+                ", price=" + price +
                 '}';
     }
 }
