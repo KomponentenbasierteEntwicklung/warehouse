@@ -79,4 +79,22 @@ public class CSVHelper {
             throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
         }
     }
+
+//    public static List<Product> csvToProducts(InputStream is) {
+//        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+//             CSVParser csvParser = new CSVParser(fileReader,
+//                     CSVFormat.DEFAULT.withQuote(null).withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
+//            List<Product> products = new ArrayList<Product>();
+//            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+//            for (CSVRecord csvRecord : csvRecords) {
+//                Product product = new Product(
+//
+//                );
+//                products.add(product);
+//            }
+//            return products;
+//        } catch (IOException e) {
+//            throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
+//        }
+//    }
 }
