@@ -1,3 +1,4 @@
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/helper/ProductAsString.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/restservicecors/WebConfig.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/Game.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/helper/CSVHelper.java
@@ -6,8 +7,12 @@
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/dlc/Dlc.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/dlc/DlcController.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/user/User.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/product/ProductRepository.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameController.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/product/Product.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/WarehouseApplication.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameService.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/product/ProductController.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/dlc/DlcRepository.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/message/ResponseMessage.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/product/ProductService.java
