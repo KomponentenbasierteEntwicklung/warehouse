@@ -2,11 +2,17 @@ com/example/warehouse/dlc/DlcController.class
 com/example/warehouse/dlc/DlcRepository.class
 com/example/warehouse/helper/CSVHelper.class
 com/example/warehouse/game/GameService.class
+com/example/warehouse/restservicecors/WebConfig.class
+com/example/warehouse/product/Product.class
 com/example/warehouse/dlc/Dlc.class
 com/example/warehouse/game/GameController.class
 com/example/warehouse/WarehouseApplication.class
+com/example/warehouse/helper/ProductAsString.class
+com/example/warehouse/product/ProductController.class
+com/example/warehouse/product/ProductRepository.class
 com/example/warehouse/game/GameRepository.class
 com/example/warehouse/message/ResponseMessage.class
+com/example/warehouse/product/ProductService.class
 com/example/warehouse/game/Game.class
 com/example/warehouse/user/User.class
 com/example/warehouse/dlc/DlcService.class

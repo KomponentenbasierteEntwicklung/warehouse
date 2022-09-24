@@ -8,11 +8,9 @@ import java.time.LocalDate;
 
 
 // @Entity used for hibernate
-// @Table for table in database
 @Entity
 public class Dlc {
 
-    // map Game Class to database table
     @Id
     @SequenceGenerator(name = "dlc_sequence", sequenceName = "dlc_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
@@ -22,7 +20,7 @@ public class Dlc {
     private String name;
     private URL headerImage;
     private String originalGame;
-    private String description;  // seperated by ; for multiple
+    private String description;
     private BigDecimal price;
     private LocalDate releaseDate;
 

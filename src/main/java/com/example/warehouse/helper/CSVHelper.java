@@ -2,6 +2,7 @@ package com.example.warehouse.helper;
 
 import com.example.warehouse.dlc.Dlc;
 import com.example.warehouse.game.Game;
+import com.example.warehouse.product.Product;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -75,6 +76,29 @@ public class CSVHelper {
                 dlcs.add(dlc);
             }
             return dlcs;
+        } catch (IOException e) {
+            throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
+        }
+    }
+
+    public static List<ProductAsString> csvToProducts(InputStream is) {
+        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+             CSVParser csvParser = new CSVParser(fileReader,
+                     CSVFormat.DEFAULT.withQuote(null).withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim())) {
+            List<ProductAsString> products = new ArrayList<ProductAsString>();
+            Iterable<CSVRecord> csvRecords = csvParser.getRecords();
+            for (CSVRecord csvRecord : csvRecords) {
+                String dlcString = csvRecord.get("dlcNames");
+                String[] dlcStringArray = null;
+                if(!dlcString.equals("")){
+                    dlcStringArray = dlcString.split(",");
+                }
+                ProductAsString product = new ProductAsString(
+                    csvRecord.get("gameName"), dlcStringArray
+                );
+                products.add(product);
+            }
+            return products;
         } catch (IOException e) {
             throw new RuntimeException("fail to parse CSV file: " + e.getMessage());
         }

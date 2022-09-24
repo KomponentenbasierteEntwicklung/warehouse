@@ -7,7 +7,6 @@ import java.net.URL;
 import java.time.LocalDate;
 
 // @Entity used for hibernate
-// @Table for table in database
 
 @Entity
 public class Game {
