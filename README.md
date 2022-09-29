@@ -28,10 +28,14 @@ To run the updated Spring Boot application, we need to rebuild it first. Therefo
 docker-compose up
 
 # Keycloak Server
-To run server in dev mode:
-```docker run --name keycloak_dev -p 8180:8180 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:latest start-dev --http-port=8180```
+This warehouse services needs authorization and be logged in as a user to access some of the APIs,
+therefore the APIs will be authenticated by keycloak.
 
-To run server in prod mode:
+To run keycloak server in dev mode:
+```docker run --name keycloak_dev -p 8180:8180 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:17.0 start-dev --http-port=8180```
+
+
+To run keycloak server in prod mode:
 ```
 docker run --name keycloak_auto_build -p 8180:8180 \
 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin \

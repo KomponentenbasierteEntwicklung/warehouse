@@ -17,10 +17,10 @@ public class Product {
             generator = "product_sequence")
     private Long id;
     private String name;
-    @OneToOne(targetEntity=Game.class)
+    @OneToOne(targetEntity=Game.class, cascade=CascadeType.ALL)
     private Game game;
     @OrderColumn
-    @OneToMany(targetEntity=Dlc.class)
+    @OneToMany(targetEntity=Dlc.class, cascade=CascadeType.ALL)
     private Dlc[] dlcs;
     private BigDecimal totalPrice;
 

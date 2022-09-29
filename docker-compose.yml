@@ -1,45 +1,3 @@
-#services:
-#  backend:
-#    container_name: app-backend
-#    image: 'docker-spring-boot-postgres:latest'
-#    build:
-#      context: .
-#    depends_on:
-#      - db
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
-#      - SPRING_DATASOURCE_USERNAME=compose-postgres
-#      - SPRING_DATASOURCE_PASSWORD=compose-postgres
-#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-#      - POSTGRES_DB=example
-#
-#    ports:
-#      - 8080:8080
-#    networks:
-#      - spring-postgres
-#  db:
-#    container_name: postgres-db
-#    image: postgres
-#    restart: always
-#    secrets:
-#      - db-password
-#    volumes:
-#      - db-data:/var/lib/postgresql/data
-#    networks:
-#      - spring-postgres
-#    environment:
-#      - POSTGRES_DB=example
-#      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-#    expose:
-#      - 5432
-#volumes:
-#  db-data:
-#secrets:
-#  db-password:
-#    file: db/password.txt
-#networks:
-#  spring-postgres:
-
 services:
   backend:
     container_name: app-backend
@@ -48,11 +6,14 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
+      - cache
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/game
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+      - SPRING_REDIS_HOST=cache
+      - SPRING_REDIS_PORT=6379
     ports:
       - 8080:8080
 
@@ -65,3 +26,11 @@ services:
       - POSTGRES_DB=game
     volumes:
       - ./dockerDB:/var/lib/postgresql/data
+
+  cache:
+    image: 'redis'
+    ports:
+      - 6379:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL

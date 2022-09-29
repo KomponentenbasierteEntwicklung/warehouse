@@ -2,6 +2,10 @@ package com.example.warehouse.game;
 
 import com.example.warehouse.helper.CSVHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +18,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
+@CacheConfig(cacheNames = "gamesCache")
 public class GameService {
 
     private final GameRepository gameRepository;
@@ -23,11 +28,12 @@ public class GameService {
         this.gameRepository = gameRepository;
     }
 
+    @Cacheable(cacheNames = "games")
     public List<Game> getGames() throws MalformedURLException {
-
         return gameRepository.findAll();
     }
 
+    @CacheEvict(cacheNames = "games", allEntries = true)
     public void addNewGame(Game game) {
         gameRepository.save(game);
     }
@@ -41,6 +47,8 @@ public class GameService {
         }
     }
 
+    @Caching(evict = { @CacheEvict(cacheNames = "games", key = "#gameId"),
+            @CacheEvict(cacheNames = "games", allEntries = true) })
     public void deleteGame(Long gameId) {
         boolean exists = gameRepository.existsById(gameId);
         if(!exists){
@@ -50,6 +58,7 @@ public class GameService {
     }
 
     @Transactional
+    @CacheEvict(cacheNames = "games", allEntries = true)
     public void updateGame(Long gameId, String name, String publisher, String genres, int requiredAge, BigDecimal price) {
         Game game = gameRepository.findById(gameId)
                 .orElseThrow(() -> new IllegalStateException("game with id " + gameId + " does not exist"));
@@ -79,6 +88,7 @@ public class GameService {
         }
     }
 
+    @Cacheable(cacheNames = "games", key = "#gameId")
     public Game getGame(Long gameId) {
         Game game = gameRepository.findById(gameId)
                 .orElseThrow(() -> new IllegalStateException("game with id " + gameId + " does not exist"));
