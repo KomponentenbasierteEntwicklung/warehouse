@@ -2,6 +2,7 @@ package com.example.warehouse.game;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDate;
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 // @Entity used for hibernate
 
 @Entity
-public class Game {
+public class Game implements Serializable {
     // map Game Class to database table
     @Id
     @SequenceGenerator(name = "game_sequence", sequenceName = "game_sequence", allocationSize = 1)

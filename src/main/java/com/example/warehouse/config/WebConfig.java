@@ -1,4 +1,4 @@
-package com.example.warehouse.restservicecors;
+package com.example.warehouse.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

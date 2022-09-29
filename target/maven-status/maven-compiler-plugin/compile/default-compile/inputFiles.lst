@@ -1,10 +1,11 @@
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/helper/ProductAsString.java
-/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/restservicecors/WebConfig.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/Game.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/helper/CSVHelper.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/dlc/DlcService.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/game/GameRepository.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/dlc/Dlc.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/config/RedisConfig.java
+/Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/config/WebConfig.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/dlc/DlcController.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/user/User.java
 /Users/karelkarunia/IdeaProjects/KomponentenbasierteEntwicklung/Warehouse/src/main/java/com/example/warehouse/product/ProductRepository.java

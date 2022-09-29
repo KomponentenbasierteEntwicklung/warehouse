@@ -6,11 +6,14 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - db
+      - cache
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/game
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+      - SPRING_REDIS_HOST=cache
+      - SPRING_REDIS_PORT=6379
     ports:
       - 8080:8080
 
@@ -23,3 +26,11 @@ services:
       - POSTGRES_DB=game
     volumes:
       - ./dockerDB:/var/lib/postgresql/data
+
+  cache:
+    image: 'redis'
+    ports:
+      - 6379:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
